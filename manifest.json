@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Sportsnet Auto Mute",
+  "name": "Sports Auto Mute",
   "version": "1.0",
   "description": "Get color from a specific pixel",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab","tabs"],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
