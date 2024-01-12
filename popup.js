@@ -19,14 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
         };
       });
     });
+    document.getElementById('getColorButton').addEventListener('click', function () {
+      unmuteTab();
+    });
   });
   
   
   function muteTab() {
     chrome.tabs.query({url: []}, function (tabs) {
       for (var i = 0; i < tabs.length; i++) {
-        console.log("Muted Info:", mutedInfo);
         if (mutedInfo) chrome.tabs.update(tabs[i].id, {"muted": true});
+      }
+  });
+  }
+
+  function unmuteTab() {
+    chrome.tabs.query({url: []}, function (tabs) {
+      for (var i = 0; i < tabs.length; i++) {
+        if (mutedInfo) chrome.tabs.update(tabs[i].id, {"muted": false});
       }
   });
   }
